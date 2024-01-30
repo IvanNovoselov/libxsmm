@@ -15,8 +15,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 
-target_include_directories(libxsmm PUBLIC ${XSMM_INCLUDE_DIRS})
-target_include_directories(libxsmm PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(libxsmm PRIVATE ${XSMM_INCLUDE_DIRS})
+target_include_directories(libxsmm PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_compile_definitions(libxsmm PUBLIC LIBXSMM_DEFAULT_CONFIG)
 target_compile_definitions(libxsmm PRIVATE  __BLAS=0)
